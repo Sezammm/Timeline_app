@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Timeline</title>
+<style>
+  body {
+    background: #111;
+    color: white;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    text-align: left;
+    font-size: 32px;
+  }
+
+  .item {
+    margin: 10px 0;
+    opacity: 0.4;
+  }
+
+  .past { color: #4caf50; opacity: 0.6; }
+  .current { color: #ffeb3b; font-size: 40px; opacity: 1; }
+  .future { color: #aaa; }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div id="past" class="item"></div>
+  <div id="current" class="item current"></div>
+  <div id="future" class="item"></div>
+</div>
+
+<script>
+const events = [
+  { time: "22:29", name: "Загрузка файла" },
+  { time: "22:31", name: "Обработка данных" },
+  { time: "22:32", name: "Отправка отчета" },
+  { time: "22:33", name: "Очистка" }
+];
+
+function toMinutes(t) {
+  const [h, m] = t.split(":").map(Number);
+  return h * 60 + m;
+}
+
+function getNowMinutes() {
+  const now = new Date();
+  return now.getHours() * 60 + now.getMinutes();
+}
+
+function update() {
+  const now = getNowMinutes();
+
+  let index = events.findIndex(e => toMinutes(e.time) > now);
+
+  if (index === -1) index = events.length;
+
+  const past = events[index - 1];
+  const current = events[index] || null;
+  const future = events[index + 1] || null;
+
+  document.getElementById("past").innerText =
+    past ? `✔ ${past.name} ${past.time}` : "";
+
+  document.getElementById("current").innerText =
+    current ? `▶ ${current.name} ${current.time}` : "Нет активных";
+
+  document.getElementById("future").innerText =
+    future ? `… ${future.name} ${future.time}` : "";
+}
+
+setInterval(update, 1000);
+update();
+</script>
+
+</body>
+</html>

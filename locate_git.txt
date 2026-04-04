@@ -1,0 +1,14 @@
+
+in PowerShell:
+
+cd C:\Users\Seez\timeline-app\
+============================
+Билд в exe:
+npm run tauri build
+
+Запуск проги:
+npm run tauri dev
+
+
+
+cd C:\Users\Seez\timeline-app\
