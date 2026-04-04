@@ -11,15 +11,15 @@
   "app": {
     "windows": [
       {
-        "title": "KIS update timeline by Sezam © 2026",
-        "width": 730,
+        "title": "KIS update timeline (summertime) by Sezam © 2026",
+        "width": 735,
         "height": 349,
         "resizable": true,
         "alwaysOnTop": false,
         "skipTaskbar": true,
-		"transparent": true,
+		    "transparent": true,
         "decorations": true,
-		"minimizable": false
+		    "minimizable": false
       }
     ]
   },

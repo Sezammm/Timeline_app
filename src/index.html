@@ -14,7 +14,7 @@
   }
 
   body {
-    background: rgba(8, 12, 20, 0.55);
+    background: rgba(8, 12, 20, 0.40);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -27,8 +27,8 @@
     box-sizing: border-box;
     margin-top: 1px;
     padding: 10px;
-    border-radius: 14px;
-    background: rgba(12, 18, 28, 0.55);
+    border-radius: 7px;
+    background: rgba(12, 18, 28, 0);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     user-select: none;
@@ -37,8 +37,8 @@
   .inner {
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 10px 10px 2px;
-    border-radius: 10px;
+    padding: 12px 10px 10px 5px;
+    border-radius: 6px;
     background: rgba(10, 10, 10, 0.72);
   }
 
@@ -63,7 +63,7 @@
 
   .label {
     min-width: 42px;
-    font-weight: 800;
+    font-weight: 750;
     margin-left: -2px;
   }
 
@@ -90,7 +90,7 @@
   .row.current .label,
   .row.current .text {
     color: #ffe92e !important;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .hint {
@@ -112,13 +112,13 @@
 <script>
 const events = [
   { time: "11:00", place: "UUde", text: "Скачивание антивирусных баз" },
-  { time: "11:50", place: "UUde", text: "D:\KISbases\Temp - папка не пуста - Pushbullet/Telegram" },
-  { time: "12:15", place: "UUde", text: "D:\KISbases\Bases - папка пуста - закачка баз с помощью CLI" },
+  { time: "11:50", place: "UUde", text: "D:\\KISbases\\Temp - папка не пуста - Pushbullet/Telegram" },
+  { time: "12:15", place: "UUde", text: "D:\\KISbases\\Bases - папка пуста - закачка баз с помощью CLI" },
   { time: "13:00", place: "UUde", text: "Архивация, перенос архива по папкам, удаление старых баз" },
-  { time: "13:40", place: "UUde", text: "Upload bases.zip на хостинг SZAM.RU" },
+  { time: "13:40", place: "UUde", text: "Upload bases.zip на хостинг SZAM.RU (FTP)" },
   { time: "14:30", place: "NYC", text: "Bases.zip - есть - do nothing or download from SZAM.RU (FTP)" },
-  { time: "15:00", place: "NYC", text: "C:\KISbases\Out - удаляет содержимое" },
-  { time: "15:10", place: "NYC", text: "Распаковывает bases.zip и переносит в C:\KISbases\Out" }
+  { time: "15:00", place: "NYC", text: "C:\\KISbases\\Out - удаляет содержимое" },
+  { time: "15:10", place: "NYC", text: "Распаковывает bases.zip и переносит в C:\\KISbases\\Out" }
 ];
 
 const widget = document.getElementById("widget");
@@ -126,8 +126,8 @@ const inner = document.getElementById("inner");
 const list = document.getElementById("list");
 const hint = document.getElementById("hint");
 
-let opacity = 0.72;
-const minOpacity = 0.15;
+let opacity = 0.70;
+const minOpacity = 0.00;
 const maxOpacity = 0.95;
 const step = 0.05;
 
