@@ -1,8 +1,27 @@
 
+Это Tauri + Rust приложение.
+Frontend: src/index.html
+Backend: src-tauri/src/main.rs
+========================================================
+
+Tree:
+
+"timeline-app" | Set-Content Tree_for_AI.txt
+"" | Add-Content Tree_for_AI.txt
+"src" | Add-Content Tree_for_AI.txt
+Get-ChildItem src -Recurse -Name | Add-Content Tree_for_AI.txt
+"" | Add-Content Tree_for_AI.txt
+"src-tauri" | Add-Content Tree_for_AI.txt
+Get-ChildItem src-tauri -Name | Where-Object { $_ -notin @("target", "gen") } | Add-Content Tree_for_AI.txt
+"" | Add-Content Tree_for_AI.txt
+"src-tauri\src" | Add-Content Tree_for_AI.txt
+Get-ChildItem src-tauri\src -Recurse -Name | Add-Content Tree_for_AI.txt
+
+========================================================
 in PowerShell:
 
 cd C:\Users\Seez\timeline-app\
-============================
+========================================================
 Билд в exe:
 npm run tauri build
 
