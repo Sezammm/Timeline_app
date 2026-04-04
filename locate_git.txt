@@ -9,6 +9,6 @@ npm run tauri build
 Запуск проги:
 npm run tauri dev
 
-
+git add . && git commit -m "update v.1" && git push
 
 cd C:\Users\Seez\timeline-app\
