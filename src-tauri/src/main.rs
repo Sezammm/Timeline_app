@@ -9,6 +9,7 @@ use tauri::{
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_window_state::Builder::default().build())
         .setup(|app| {
             let show_item = MenuItemBuilder::new("Показать")
                 .id("show")
@@ -48,7 +49,7 @@ fn main() {
                             let _ = window.hide();
                         }
                         "quit" => {
-                            std::process::exit(0);
+                            app.exit(0);
                         }
                         _ => {}
                     }
